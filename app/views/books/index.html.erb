@@ -1,0 +1,32 @@
+<main>
+<%= render 'books/userinfo', books: @books, user: current_user %>
+    <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+      <table class="table table-hover table-inverse">
+      <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Opinion</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+      <% @books.each do |book| %>
+      <tbody>
+      <tr>
+        <td><%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
+        <td>
+          <%= link_to(book_path(book)) do %>
+          <%= book.book_title %>
+          <% end %>
+          </td>
+        <td><%= book.opinion %></td>
+        <td></td>
+      </tr>
+      </tbody>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+</main>
