@@ -1,4 +1,10 @@
 <main>
+  <% if flash[:notice] %>
+    <p class="notice text-success">
+      <%= flash[:notice] %>
+    </p>
+  <% end %>
+
   <%= render 'books/userinfo', books: @new_book, user: @user %>
   <div class="col-md-8 offset-md-1">
     <h2>Book detail</h2>
