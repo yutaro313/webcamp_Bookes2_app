@@ -12,9 +12,9 @@
 <% end %>
       <%= form_with model:@book, local:true do |f| %>
         <label for="inputTitle">Title</label>
-        <%= f.text_field :book_title, autofocus: true, id:"inputTitle", palaceholder:"タイトル", class:'form-control book_title' %>
-        <label for="inputOpinion">Opinion</label>
-        <%= f.text_area :opinion, autofocus: true, id:"inputOpinion", palaceholder:"説明", class:'form-control opinion mb-3' %>
+        <%= f.text_field :title, autofocus: true, id:"inputTitle", palaceholder:"タイトル", class:'form-control title' %>
+        <label for="inputBody">Opinion</label>
+        <%= f.text_area :body, autofocus: true, id:"inputBody", palaceholder:"説明", class:'form-control body mb-3' %>
 
         <%= f.submit "Update Book", class:'btn btn-success mb-3' %>
         <p><%= link_to "Show", book_path(@book) %>

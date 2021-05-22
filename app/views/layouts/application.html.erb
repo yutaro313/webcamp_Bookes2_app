@@ -23,7 +23,7 @@
             <ul class="navbar-nav ml-auto">
                <% if user_signed_in? %>
                   <li>
-                    <%= link_to "Home", users_path, class: 'nav-link fas fa-home text-light' %>
+                    <%= link_to "Home", user_path(current_user.id), class: 'nav-link fas fa-home text-light' %>
 
                     <!--book_path(current_user.id)-->
                   </li>
@@ -38,17 +38,17 @@
                   </li>
                 <% else %>
                   <li>
-                    <%= link_to "Home", users_path, class: 'nav-link fas fa-home text-light' %>
+                    <%= link_to "Home", root_path, class: 'nav-link fas fa-home text-light' %>
                     <!--book_path(current_user.id)-->
                   </li>
                   <li>
-                    <%= link_to "About", about_path, class: 'nav-link fas fa-link text-light' %>
+                    <%= link_to "About", home_about_path, class: 'nav-link fas fa-link text-light' %>
                   </li>
                   <li>
                     <%= link_to "sign up", new_user_registration_path, class: 'nav-link fas fa-user-plus text-light' %>
                   </li>
                   <li>
-                    <%= link_to "login", new_user_session_path, class: 'nav-link fas fa-sign-in text-light' %>
+                    <%= link_to "login", new_user_session_path, class: 'nav-link fas fa-sign-in-alt text-light' %>
                   </li>
                 <% end %>
             </ul>

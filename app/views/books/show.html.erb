@@ -11,16 +11,20 @@
     <table class="table">
       <tbody>
         <tr>
-          <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %><br>
-         <%= link_to(user_path(@user)) do %>
+          <td>
+            <%= link_to(user_path(@user)) do %>
+            <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %><br>
           <p><%= @user.name %></p>
          <% end %>
           </td>
           <td>
-            <p><%= @book.book_title %></p>
+            <p><%= link_to book_path(@book) do %>
+            <%= @book.title %>
+            <% end %>
+            </p>
           </td>
           <td>
-            <p><%= @book.opinion %></p>
+            <p><%= @book.body %></p>
           </td>
 
             <% if @book.user == current_user %>
